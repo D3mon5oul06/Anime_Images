@@ -8,28 +8,28 @@ const Header = () => {
     <div className="Encabezado">
 
       <div className="RecuadroLogo">
-        <h1><b className="Logo_Text">MyGamesList</b></h1>
-        <img className='Logo_Img' src='./img/Logo.png' alt='Textp'></img>
+        <h1><b className="Logo_Text">Comic Crusade</b></h1>
+        <img className='Logo_Img' src='./img/Icono.png' alt='Textp'></img>
       </div>
 
       <div className="menu">
         <nav>
           <ul>
             <li>
-              <Link to="/Inicio" className="no-underline black">
+              <Link to="/" className="no-underline black">
                 Inicio
               </Link>
             </li>
 
             <li>
-              <Link to="/dinosaurios" className="no-underline black">
-                Mostrar Datos
+              <Link to="/List" className="no-underline black">
+                Mostrar_Flores
               </Link>
             </li>
 
             <li>
-              <Link to="/add" className="no-underline black" >
-                Agregar Datos
+              <Link to="/create" className="no-underline black" >
+                Guardar_Flores
               </Link>
             </li>
           </ul>
