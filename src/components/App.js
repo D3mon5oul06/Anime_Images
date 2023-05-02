@@ -1,26 +1,24 @@
-import { Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/App.css";
-import VideojuegoList from "../componentes/game-list.component";
-import { Alumno } from "./Inicio";
-import Header from "./Header";
-import {Switch } from "react-router-dom/cjs/react-router-dom.min";
-import AddVideojuego from "../componentes/add-videogame.component";
+import React from 'react';
+import Header from './Header';
+import { Route, Routes } from 'react-router-dom';
+import ComicList from './ComicList';
+import {Informacion, Imagen, Alumno} from './Inicio';
+import CreateComics from './CreateComic';
+
 
 const App = () => {
   return (
-    <div>
+    <div >
       <Header />
-      <div className="container mt-3">
-        <h2>Aplicación React para almacenar en Firestore y Storage!</h2>
-          <Switch>
-            <Route exact path={["/", "/Inicio"]} component={Alumno } />
-            <Route exact path={["/", "/dinosaurios"]} component={VideojuegoList} />
-            <Route exact path="/add" component={AddVideojuego} />
-          </Switch>
+      <Imagen />
+      <Informacion/> 
+        <Routes>
+          <Route path="/" element = { <Alumno />}/>
+          <Route path="/List" element={<ComicList/>} />
+          <Route path="/create" element={<CreateComics/>}
+          />
+        </Routes>
       </div>
-    </div>
   );
 };
-
 export default App;

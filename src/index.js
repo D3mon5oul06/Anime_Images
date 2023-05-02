@@ -1,26 +1,36 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./styles/index.css";
-import App from "./components/App";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import './styles/index.css';
+import { BrowserRouter } from 'react-router-dom';
+import {
+  ApolloProvider,
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache
+} from '@apollo/client';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+// 2
+const httpLink = createHttpLink({
+  uri: 'https://eli456-eli456.cloud.okteto.net/graphql/'
+});
+
+// 3
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache()
+});
+
+// 4
+ReactDOM.render(
   <BrowserRouter>
-    <App />
-  </BrowserRouter>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </BrowserRouter>,
+  document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-//reportWebVitals();
 
-//ReactDOM.render(
-//  <BrowserRouter>
-//    <App />
-//  </BrowserRouter>,
-//  document.getElementById("root")
-//);
 
-//serviceWorker.unregister();
+

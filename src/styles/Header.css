@@ -6,9 +6,6 @@
     --Degradado2: rgba(247, 37, 133, 1), rgba(181, 23, 158, 1), rgba(114, 9, 183, 1), rgba(86, 11, 173, 1),
         rgba(72, 12, 168, 1), rgba(58, 12, 163, 1), rgba(63, 55, 201, 1), rgba(67, 97, 238, 1), rgba(72, 149, 239, 1),
         rgba(76, 201, 240, 1);
-
-    --Degradado3: rgba(1, 22, 30, 1),rgba(18, 69, 89, 1),rgba(89, 131, 146, 1),
-    rgba(174, 195, 176, 1),rgba(239, 246, 224, 1);
 }
 
 header {
@@ -18,7 +15,7 @@ header {
     width: 100%;
     height: 80px;
     background: #fff;
-    box-shadow: 0 4px 25px -22px rgb(146, 101, 101);
+    box-shadow: 0 4px 25px -22px black;
     z-index: 10;
 }
 
@@ -28,7 +25,8 @@ header {
     position: relative;
     width: 100%;
     padding: 0px 30px;
-    background-color: rgb(202, 210, 197);
+    background-color: rgba(65, 90, 119, 1);
+    
 }
 
 .RecuadroLogo {
@@ -39,9 +37,10 @@ header {
 }
 
 .Logo_Text {
-    background: linear-gradient(to top, var(--Degradado3));
+    background: linear-gradient(to top, var(--Degradado1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-style: italic;
 }
 
 .Logo_Img {

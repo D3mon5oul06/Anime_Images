@@ -64,16 +64,9 @@
   position: absolute
 }
 
-
-
 .bg-white {
-  background-color: #fff;
+  background-color: rgba(224, 225, 221, 1);
 }
-
-
-
-
-
 
 .small {
   font-size: 0.75rem;
