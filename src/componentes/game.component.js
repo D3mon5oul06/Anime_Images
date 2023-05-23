@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/firestore";
 import TutorialDataService from "../servicios/game.service";
+import KafkaService from "../services/kafka.service";
 
 function ReactionButton({ reactionType, onClick, count }) {
   return (
@@ -174,7 +175,7 @@ export default class Videojuego extends Component {
 
     return (
       <div>
-        <h4> Dinosaurio </h4>
+        <h4> juegos-comics </h4>
         {currentTutorial ? (
           <div className="edit-form">
             <form>
@@ -250,32 +251,34 @@ export default class Videojuego extends Component {
 
         <div>
           <ReactionButton
-            reactionType="Like"
-            onClick={() => this.handleReactionClick("like")}
-            count={reactions.like}
-          />
+            reactionType="👍🏿"
+            onClickonClick={(e) => {
+              e.preventDefault();
+              saveLike(e, 1)
+                
+            }} />
           <ReactionButton
-            reactionType="Love"
+            reactionType="❤"
             onClick={() => this.handleReactionClick("love")}
             count={reactions.love}
           />
           <ReactionButton
-            reactionType="Haha"
+            reactionType="😂"
             onClick={() => this.handleReactionClick("haha")}
             count={reactions.haha}
           />
           <ReactionButton
-            reactionType="Wow"
+            reactionType="😱"
             onClick={() => this.handleReactionClick("wow")}
             count={reactions.wow}
           />
           <ReactionButton
-            reactionType="Sad"
+            reactionType="😭"
             onClick={() => this.handleReactionClick("sad")}
             count={reactions.sad}
           />
           <ReactionButton
-            reactionType="Angry"
+            reactionType="😡"
             onClick={() => this.handleReactionClick("angry")}
             count={reactions.angry}
           />

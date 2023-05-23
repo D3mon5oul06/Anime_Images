@@ -20,5 +20,5 @@ class TutorialDataService {
   }
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
+// eslint-disable-next-line 
 export default new TutorialDataService();
